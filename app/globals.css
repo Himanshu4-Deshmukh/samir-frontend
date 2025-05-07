@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --color-primary: 5, 217, 232;
+  --color-secondary: 61, 26, 120;
+  --color-accent: 255, 0, 255;
+  --color-highlight: 15, 240, 252;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 191 100% 46.3%;
+    --primary-foreground: 0 0% 1.2%;
+    --secondary: 270 60% 28.8%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 5% 10%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 300 100% 50%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5% 20%;
+    --input: 240 5% 20%;
+    --ring: 191 100% 46.3%;
+    --chart-1: 191 100% 46.3%;
+    --chart-2: 270 60% 28.8%;
+    --chart-3: 300 100% 50%;
+    --chart-4: 190 98% 53%;
+    --chart-5: 271 83% 44%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(to bottom, rgba(10, 10, 30, 1), rgba(2, 6, 23, 1));
+  }
+}
+
+@layer components {
+  .glow-text {
+    text-shadow: 0 0 10px rgba(5, 217, 232, 0.7), 0 0 20px rgba(5, 217, 232, 0.5);
+  }
+  
+  .glow-border {
+    box-shadow: 0 0 10px rgba(5, 217, 232, 0.7), 0 0 20px rgba(5, 217, 232, 0.5);
+  }
+  
+  .punk-card {
+    @apply relative bg-black/40 backdrop-blur-md border border-primary/30 rounded-lg overflow-hidden;
+    box-shadow: 0 0 15px rgba(5, 217, 232, 0.3);
+  }
+  
+  .punk-card:before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-30;
+    z-index: -1;
+  }
+  
+  .punk-button {
+    @apply relative px-6 py-2 bg-primary/10 text-primary border border-primary/50 rounded-md 
+    font-semibold transition-all duration-300 hover:bg-primary/20 hover:border-primary/80 focus:outline-none;
+    box-shadow: 0 0 10px rgba(5, 217, 232, 0.3);
+  }
+  
+  .punk-button:hover {
+    text-shadow: 0 0 8px rgba(5, 217, 232, 0.8);
+    box-shadow: 0 0 15px rgba(5, 217, 232, 0.5);
+  }
+  
+  .grid-pattern {
+    background-image: 
+      linear-gradient(rgba(5, 217, 232, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(5, 217, 232, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  
+  .neo-glow {
+    box-shadow: 
+      0 0 5px rgba(5, 217, 232, 0.3),
+      0 0 10px rgba(5, 217, 232, 0.2),
+      0 0 15px rgba(5, 217, 232, 0.1);
+  }
+}
+
+/* Punk-style progress bar */
+.progress-container {
+  @apply w-full h-3 bg-black/50 rounded-full overflow-hidden border border-primary/30;
+}
+
+.progress-bar {
+  @apply h-full rounded-full;
+  background: linear-gradient(90deg, rgb(5, 217, 232), rgb(255, 0, 255));
+  box-shadow: 0 0 10px rgba(5, 217, 232, 0.7), 0 0 20px rgba(255, 0, 255, 0.4);
+  transition: width 0.5s ease-in-out;
+}
+
+/* Neon text effect */
+.neon-text {
+  color: #fff;
+  text-shadow:
+    0 0 5px rgba(5, 217, 232, 0.8),
+    0 0 10px rgba(5, 217, 232, 0.5),
+    0 0 15px rgba(5, 217, 232, 0.3);
+}
