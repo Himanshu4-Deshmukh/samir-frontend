@@ -1,7 +1,7 @@
 import { User } from "@/types";
 
-// const API_URL = "https://backend-cppq.onrender.com";
-const API_URL = "http://localhost:5000";
+const API_URL = "https://backend-cppq.onrender.com";
+// const API_URL = "http://localhost:5000";
 
 export async function signup(
   username: string,
